@@ -82,4 +82,5 @@ def Fill_Timesheet():
     # driver.find_element_by_id('Master_tdSubmit').click()
 
 
-Fill_Timesheet()
+if __name__ == "__main__":
+    Fill_Timesheet()
