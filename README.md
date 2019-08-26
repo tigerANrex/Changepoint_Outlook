@@ -12,4 +12,4 @@
 
 Looks in my Outlook calendar and grabs all my training hours for the past 4 days + the current day, and puts those times into the Changepoint time sheet training hours then calculates the remaining hours and puts that in the production hours.
 
-I use this with Windows Task Scheduler, and I have it run every Friday, so it would grab times from Monday-Friday.
+I use this with **Windows Task Scheduler**, and I have it run every Friday, so it would grab times from Monday-Friday.
