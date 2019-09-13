@@ -68,9 +68,12 @@ def Fill_Timesheet():
         iframe = driver.find_elements_by_tag_name('iframe')[0]
         driver.switch_to.frame(iframe)
         time_entry = driver.find_element_by_id('tblTimeSheet_tblMain').find_element_by_tag_name('tbody').find_elements_by_tag_name('tr')
+        time_entry_task = driver.find_element_by_id('tblTimeSheet_tblFixedCol').find_element_by_tag_name('tbody').find_elements_by_tag_name('tr')
         for project in range(len(time_entry)):
             for i in range(4, 9):
-                if(str(time_entry[project].find_elements_by_tag_name('td')[i].get_attribute("title")).upper() == 'Training'.upper()):
+                # Update: Changepoint removed the title attribute
+                # if(str(time_entry[project].find_elements_by_tag_name('td')[i].get_attribute("title")).upper() == 'Training'.upper()):
+                if(str(time_entry_task[project].find_elements_by_tag_name('td')[1].get_attribute("cv")).upper() == 'Training'.upper()):
                     time_entry[project].find_elements_by_tag_name('td')[i].click()
                     time_entry[project].find_elements_by_tag_name('td')[i].find_element_by_tag_name('nobr').find_element_by_tag_name('input').send_keys(str(workday_hours[i-4])[0] + '.' + str(workday_hours[i-4])[2:4])
                 else:
